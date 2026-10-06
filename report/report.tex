@@ -1,0 +1,105 @@
+\documentclass[11pt, a4paper]{article}
+
+% Packages
+\usepackage[margin=0.5in]{geometry} % Standard 1-inch margins
+\usepackage{amsmath, amssymb, amsfonts} % Math packages
+\usepackage{graphicx} % For including figures
+\usepackage{booktabs} % For professional tables
+\usepackage{hyperref} % For hyperlinks
+\usepackage[
+  backend=biber,
+  style=numeric,
+  sorting=none,
+  maxbibnames=99,
+  minbibnames=99,
+  maxcitenames=99,
+  mincitenames=99
+]{biblatex}
+
+\addbibresource{references.bib}
+\setlength{\bibhang}{0pt}
+\DeclareFieldFormat[article,inbook,incollection,inproceedings,misc,online]{title}{\mkbibemph{#1}}
+\usepackage{xcolor} % For colored text (e.g., TODOs)
+\usepackage{enumitem} % For list formatting
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{indentfirst}
+\usepackage{longtable}
+\usepackage{float}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  filecolor=magenta,
+  urlcolor=cyan,
+  citecolor=blue,
+}
+
+\title{COMP9417 Project: Feature learning kernel machines for tabular data \\ \large [One Night Miracle]}
+
+\author{
+  Chih-Yueh Liu \\
+  z5631242 \\
+  UNSW Sydney \\
+  \texttt{z5631242@ad.unsw.edu.au}
+  \and
+  Isaac Dwadattusyah Haikal Azziz \\
+  z5640942 \\
+  UNSW Sydney \\
+  \texttt{z5640942@ad.unsw.edu.au}
+  \and
+  Enjia Wu \\
+  z5456801 \\
+  UNSW Sydney \\
+  \texttt{z5456801@ad.unsw.edu.au}
+  \and
+  Jialong (Alan) Wang \\
+  z5696241 \\
+  UNSW Sydney \\
+  \texttt{alanwing1997@gmail.com}
+  \and
+  Chalat Phumphiraratthaya \\
+  z5623543 \\
+  UNSW Sydney \\
+  \texttt{z5623543@ad.unsw.edu.au}
+}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty} % No page number on title page
+
+\vspace{2cm}
+\newpage
+\begin{abstract}
+  This project explores the application of feature learning kernel machines for tabular data. We implement the newly published feature learning kernel machine, i.e. xRFM~\cite{ref1}, according to the paper and evaluate its performance with traditional kernel machines and deep learning models on a suite of benchmark datasets. Specifically, we compare xRFM against 3 baselines: Random Forest, XGBoost, and TabPFN. We evaluate performance using RMSE for regression tasks and Accuracy/AUC-ROC for classification tasks, as well as training and inference time. Additionally, we analyze the interpretability of xRFM by comparing its feature importance scores with those from traditional methods. Finally, we assess the scalability of xRFM on larger datasets by plotting performance and training time against the number of samples. Our experiments demonstrate that feature learning kernel machines can achieve competitive performance on tabular data, and that they are particularly effective for datasets with complex relationships between features and target variables.
+\end{abstract}
+
+\section{Introduction}
+\input{sections/Introduction}
+
+\section{Methodology}
+\input{sections/methodology}
+
+\section{Results}
+\input{sections/results}
+
+\section{Discussion}
+\input{sections/discussion}
+
+\section{Conclusion}
+\input{sections/conclusion}
+
+\newpage
+\printbibliography[title={References}]
+
+\newpage
+\appendix
+\section*{Appendix}
+\input{sections/appendix_a}
+\input{sections/appendix_b}
+\input{sections/appendix_c}
+\input{sections/appendix_d}
+
+\end{document}

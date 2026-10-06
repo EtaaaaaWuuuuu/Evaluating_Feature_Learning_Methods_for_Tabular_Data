@@ -1,0 +1,50 @@
+\clearpage
+\section{Classification reports for classification datasets}
+
+Accuracy (Acc.), precision (P), recall (R), and F1-score (F1) are reported. 
+
+Table~\ref{tab:obesity_classification_report} summarises the classification report metrics for the Obesity Level dataset.
+
+\subsection{Obesity Level}
+
+\begin{table}[H]
+  \centering
+  \caption{Classification report summary on the Obesity Level dataset}
+  \small
+  \begin{tabular}{lccccccc}
+    \toprule
+    \textbf{Model} & \textbf{Acc.} 
+    & \textbf{Macro P} & \textbf{Macro R} & \textbf{Macro F1}
+    & \textbf{Weighted P} & \textbf{Weighted R} & \textbf{Weighted F1} \\
+    \midrule
+    Random Forest & 0.9433 & 0.9473 & 0.9411 & 0.9424 & 0.9491 & 0.9433 & 0.9445 \\
+    TabPFN        & 0.9929 & 0.9930 & 0.9926 & 0.9927 & 0.9933 & 0.9929 & 0.9929 \\
+    XGBoost       & 0.9669 & 0.9665 & 0.9658 & 0.9661 & 0.9670 & 0.9669 & 0.9669 \\
+    xRFM          & 0.9835 & 0.9828 & 0.9826 & 0.9825 & 0.9837 & 0.9835 & 0.9834 \\
+    \bottomrule
+  \end{tabular}
+  \label{tab:obesity_classification_report}
+\end{table}
+
+
+Table~\ref{tab:sleep_health_classification_report} summarises the classification report metrics for the Sleep Health dataset.
+\subsection{Sleep Health}
+
+\begin{table}[H]
+  \centering
+  \caption{Classification report summary on the Sleep Health dataset}
+  \small
+  \begin{tabular}{lccccccc}
+    \toprule
+    \textbf{Model} & \textbf{Acc.} 
+    & \textbf{Macro P} & \textbf{Macro R} & \textbf{Macro F1}
+    & \textbf{Weighted P} & \textbf{Weighted R} & \textbf{Weighted F1} \\
+    \midrule
+    Random Forest & 0.8458 & 0.7464 & 0.6474 & 0.6765 & 0.8350 & 0.8458 & 0.8331 \\
+    TabPFN        & 0.9435 & 0.8614 & 0.8490 & 0.8549 & 0.9430 & 0.9435 & 0.9432 \\
+    XGBoost       & 0.9465 & 0.8612 & 0.8325 & 0.8457 & 0.9448 & 0.9465 & 0.9454 \\
+    xRFM          & 0.8905 & 0.8068 & 0.7843 & 0.7939 & 0.8909 & 0.8905 & 0.8904 \\
+    \bottomrule
+  \end{tabular}
+  \label{tab:sleep_health_classification_report}
+\end{table}

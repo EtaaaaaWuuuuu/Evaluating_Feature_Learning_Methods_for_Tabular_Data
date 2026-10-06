@@ -1,0 +1,3 @@
+We evaluated xRFM on five tabular datasets and compared it with XGBoost, Random Forest, and TabPFN across both regression and classification tasks. Overall, xRFM is competitive and offers a useful AGOP-based interpretability story, but it does not consistently outperform the strongest baselines.
+
+Our interpretability results on Abalone broadly agree with standard importance methods, while providing a model-specific view via feature sensitivities. On the efficiency side, the learning-curve experiment highlights a practical trade-off: xRFM can be much slower to train on larger problems and may fall behind XGBoost/TabPFN in some settings. Taken together, xRFM is best viewed as a strong, interpretable option for tabular learning rather than a universal replacement.

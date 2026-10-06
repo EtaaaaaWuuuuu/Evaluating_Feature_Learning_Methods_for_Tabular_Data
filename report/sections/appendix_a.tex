@@ -1,0 +1,97 @@
+\section{Final model configurations used in the benchmark}
+\label{app:final-configs}
+
+Tables~\ref{tab:xrfm-config}, \ref{tab:xgb-config}, \ref{tab:rf-config}, and \ref{tab:tabpfn-config} summarise the final hyperparameter configurations selected for each model on each dataset. Only model settings are reported here; predictive performance is presented separately in the Results section.
+
+\subsection{xRFM}
+\label{tab:xrfm-config}
+
+\begin{table}[h]
+  \centering
+  \small
+  \setlength{\tabcolsep}{5pt}
+  \caption{Final xRFM configurations across datasets.}
+  \label{tab:xrfm-config}
+  \begin{tabular}{lccccc}
+    \toprule
+    \textbf{Parameter} & \textbf{Abalone} & \textbf{Diamonds} & \textbf{Obesity Level} & \textbf{Sleep Health} & \textbf{Superconductor} \\
+    \midrule
+    Kernel     & lpq        & l2         & lpq        & l2         & l2 \\
+    Bandwidth  & 10.4824    & 29.4677    & 2.3658     & 122.8789   & 123.5676 \\
+    Exponent   & 1.3025     & 1.4999     & 1.1005     & 0.8511     & 1.1646 \\
+    Reg        & 0.06658    & 0.000315   & 1.04e-05   & 0.003896   & 0.000249 \\
+    Max Leaf Size & 30934    & -         & 60000      & 60000      & 2578 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsection{XGBoost}
+\label{tab:xgb-config}
+
+\begin{table}[h]
+  \centering
+  \small
+  \setlength{\tabcolsep}{4pt}
+  \caption{Final XGBoost configurations across datasets.}
+  \label{tab:xgb-config}
+  \begin{tabular}{lccccc}
+    \toprule
+    \textbf{Parameter} & \textbf{Abalone} & \textbf{Diamonds} & \textbf{Obesity Level} & \textbf{Sleep Health} & \textbf{Superconductor} \\
+    \midrule
+    n\_estimators      & 422        & 496        & 513        & 725        & 523 \\
+    learning\_rate     & 0.01383    & 0.06354    & 0.06547    & 0.13566    & 0.04231 \\
+    max\_depth         & 5          & 7          & 10         & 3          & 8 \\
+    min\_child\_weight & 7          & 3          & 1          & 6          & 6 \\
+    subsample          & 0.6506     & 0.9595     & 0.9935     & 0.7923     & 0.8270 \\
+    colsample\_bytree  & 0.8919     & 0.7936     & 0.8404     & 0.8504     & 0.6628 \\
+    gamma              & 2.01e-05   & 1.03e-08   & 2.80e-05   & 0.2191     & 0.1197 \\
+    reg\_alpha         & 1.92e-07   & 0.003213   & 0.002641   & 0.002442   & 0.01330 \\
+    reg\_lambda        & 8.4730     & 6.6121     & 0.7520     & 3.5048     & 0.1673 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsection{Random Forest}
+\label{tab:rf-config}
+
+\begin{table}[h]
+  \centering
+  \small
+  \setlength{\tabcolsep}{5pt}
+  \caption{Final Random Forest configurations across datasets.}
+  \label{tab:rf-config}
+  \begin{tabular}{lccccc}
+    \toprule
+    \textbf{Parameter} & \textbf{Abalone} & \textbf{Diamonds} & \textbf{Obesity Level} & \textbf{Sleep Health} & \textbf{Superconductor} \\
+    \midrule
+    n\_estimators        & 76    & 65    & 120   & 82    & 62 \\
+    max\_depth           & 11    & 12    & 12    & 12    & 12 \\
+    min\_samples\_split  & 9     & 6     & 6     & 10    & 5 \\
+    min\_samples\_leaf   & 3     & 2     & 2     & 2     & 2 \\
+    max\_features        & log2  & sqrt  & log2  & sqrt  & sqrt \\
+    bootstrap            & True  & True  & True  & True  & True \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsection{TabPFN}
+\label{tab:tabpfn-config}
+
+\begin{center}
+  \small
+  \setlength{\tabcolsep}{5pt}
+  \captionof{table}{Final TabPFN v2.6 configurations across datasets.}
+  \vspace{0.8em}
+  \begin{tabular}{lccccc}
+    \toprule
+    \textbf{Parameter} & \textbf{Abalone} & \textbf{Diamonds} & \textbf{Obesity Level} & \textbf{Sleep Health} & \textbf{Superconductor} \\
+    \midrule
+    % device           & auto & auto & auto & auto & auto \\
+    ignore\_pretraining\_limits & False & False & False & False & False \\
+    % random\_state    & 9417 & 9417 & 9417 & 9417 & 9417 \\
+    n\_estimators    & 8    & 8    & 8    & 8    & 8 \\
+    \bottomrule
+  \end{tabular}
+
+  \label{tab:tabpfn-config}
+\end{center}

@@ -1,0 +1,50 @@
+\subsection{Average Gradient Outer Product}
+
+A core object in xRFM is the \textbf{Average Gradient Outer Product (AGOP)}. For a trained scalar-valued predictor \(f : \mathbb{R}^{d} \rightarrow \mathbb{R}\) and a dataset \(S = \{x^{(1)}, \ldots, x^{(n)}\} \subset \mathbb{R}^{d}\), it is defined as
+\[
+  AGOP(f,S) = \frac{1}{n}\sum_{i=1}^{n} \nabla f\!\left(x^{(i)}\right)\nabla f\!\left(x^{(i)}\right)^{\top}.
+\]
+
+It measures how sensitive the fitted predictor is, on average, to small input perturbations. Because each term is an outer product of a gradient vector with itself, the AGOP is symmetric and positive semidefinite. The \((j,k)\)-th entry measures how sensitivities along features \(j\) and \(k\) co-vary, while
+\[
+  AGOP_{jj}
+  =
+  \frac{1}{n}\sum_{i=1}^{n}
+  \left(
+    \frac{\partial f\!\left(x^{(i)}\right)}{\partial x_j}
+  \right)^2
+\]
+is the average squared partial derivative for feature \(j\). A large diagonal entry means the predictor changes strongly when that feature changes, whereas a small entry indicates relative insensitivity to that coordinate.
+
+AGOP supports two complementary interpretability views. Its diagonal gives coordinate-wise feature importance, while its leading eigenvectors identify directions in input space along which the predictor varies most. For any unit vector \(v\),
+\[
+  v^{\top} AGOP(f,S)\, v
+  =
+  \frac{1}{n}\sum_{i=1}^{n}
+  \left(
+    \nabla f\!\left(x^{(i)}\right)^{\top} v
+  \right)^2,
+\]
+so the top eigenvector gives the direction with the largest average squared directional derivative. Thus, the diagonal captures axis-aligned importance, whereas the eigendecomposition captures joint feature effects. This matters in tabular learning because predictive structure may depend not only on single variables but also on interactions among them.
+
+Compared with simpler feature-analysis methods, \textbf{AGOP} is supervised and model-based. \textbf{PCA} is unsupervised and identifies directions of large input variance whether or not they are predictive. \textbf{Mutual information} is usually applied one feature at a time and therefore does not directly recover joint predictive directions. \textbf{Permutation importance} measures performance loss after feature shuffling, so it is useful as a post hoc score but does not provide the same geometric description of the learned predictor. By contrast, AGOP summarises both single-feature relevance and multi-feature predictive structure in a single matrix.
+
+\subsection{xRFM Training Pipeline}
+
+xRFM combines a feature-learning kernel model with an adaptive binary tree. It is motivated by two limitations of standard kernel methods: the kernel is fixed in advance and may not align with the most predictive structure, and exact training requires solving a large kernel system. xRFM addresses the first problem through AGOP-based feature learning and the second through recursive partitioning.
+
+At each leaf, xRFM uses a modified Recursive Feature Machine (RFM), which alternates between fitting a kernel predictor and updating a feature matrix using the AGOP of the fitted model. For tabular data, xRFM extends this idea by searching over a broader kernel family, allowing either the full AGOP or only its diagonal, handling categorical variables explicitly, and selecting bandwidth locally within each leaf. These choices are useful because tabular columns often have distinct semantic meaning and different regions of the feature space may follow different predictive patterns.
+
+The tree is built recursively. At each node, xRFM fits a temporary split model, computes its AGOP, and takes the leading eigenvector as the split direction. The data are then divided by the median projection onto that direction, which keeps the tree approximately balanced. Splitting continues until each leaf contains at most \(C\) samples, after which a full leaf RFM is trained on that subset. For a new point \(x^{*}\), inference routes it from the root to a terminal leaf using the stored split rules, and the leaf-specific RFM produces the final prediction. By replacing one large global kernel problem with a hierarchy of smaller local ones, xRFM improves scalability while remaining locally adaptive; in the xRFM framework, training is approximately \(O(n \log n)\) and inference is \(O(\log n)\).
+
+\subsection{Experimental Setup}
+
+We compared \textbf{xRFM}, \textbf{XGBoost}, \textbf{Random Forest}, and \textbf{TabPFN} on five tabular datasets: \textbf{Abalone}, \textbf{Diamonds}, \textbf{Superconductor}, \textbf{Obesity Level}, and \textbf{Sleep Health}. This selection covers both regression and classification, including at least one large-$n$ dataset, one high-dimensional dataset, and one dataset with mixed numerical and categorical features. All experiments used a fixed random seed of 9417 for reproducibility. We used \textbf{TabPFN v2.6} in our experiments, as it offers a strong and up-to-date baseline for tabular learning.
+
+Each dataset was preprocessed into fixed training and test sets using a held-out 20\% test split. For classification datasets, stratified splitting was used to preserve class proportions. We did not store a separate validation file; instead, hyperparameters were selected by 5-fold cross-validation on the training split only, and final results were reported on the untouched test split. xRFM, XGBoost, and Random Forest were tuned with 100-trial searches, using \texttt{KFold} for regression and \texttt{StratifiedKFold} for classification. The final model for each dataset was the configuration with the best validation performance, then refit on the full training split.
+
+Preprocessing was model-specific. For xRFM, XGBoost, and Random Forest, categorical and binary features were one-hot encoded before fitting. The main difference between these models was the treatment of numerical variables: xRFM standardised them, whereas XGBoost and Random Forest used them as passthrough (unscaled) inputs. TabPFN used the processed features directly, with no additional scaling or encoding applied at the model stage.
+
+We report \textbf{RMSE} for regression because it directly measures the magnitude of continuous prediction error and penalises larger errors more heavily. For classification, we report both \textbf{Accuracy} and \textbf{AUC-ROC}: Accuracy measures overall correctness, while AUC-ROC evaluates class separability across decision thresholds; for multiclass tasks, AUC-ROC was computed using a one-vs-rest formulation. We also record training time and inference time per sample to compare computational efficiency across methods. Beyond the main benchmark, we performed an interpretability comparison on Abalone using AGOP, PCA, mutual information, and permutation importance, and a learning-curve experiment on a large dataset to examine how performance and runtime change with sample size.
+
+The final hyperparameter configuration selected for each model on each dataset is summarised in (Appendix~\ref*{app:final-configs}; Tables~\ref{tab:xrfm-config}--\ref{tab:tabpfn-config}).

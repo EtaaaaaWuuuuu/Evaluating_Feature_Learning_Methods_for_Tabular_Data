@@ -1,0 +1,74 @@
+\clearpage
+\section{Confusion matrices for classification datasets}
+
+Figures~\ref{fig:cm-obesity} and~\ref{fig:cm-sleep-health} show the confusion matrices for the two classification datasets. These figures provide class-level details that complement the overall Accuracy and AUC-ROC results reported in the main Results section.
+
+\subsection{Obesity Level}
+
+\begin{figure}[H]
+  \centering
+
+  \begin{subfigure}{0.48\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../results/02_benchmarks/obesity_level/confusion_matrix_random_forest.png}
+    \caption{Random Forest}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}{0.48\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../results/02_benchmarks/obesity_level/confusion_matrix_tabpfn.png}
+    \caption{TabPFN}
+  \end{subfigure}
+
+  \vspace{0.4cm}
+
+  \begin{subfigure}{0.48\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../results/02_benchmarks/obesity_level/confusion_matrix_xgboost.png}
+    \caption{XGBoost}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}{0.48\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../results/02_benchmarks/obesity_level/confusion_matrix_xrfm.png}
+    \caption{xRFM}
+  \end{subfigure}
+
+  \caption{Confusion matrices on the Obesity Level dataset.}
+  \label{fig:cm-obesity}
+\end{figure}
+
+\subsection{Sleep Health}
+
+\begin{figure}[H]
+  \centering
+
+  \begin{subfigure}{0.48\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../results/02_benchmarks/sleep_health/confusion_matrix_random_forest.png}
+    \caption{Random Forest}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}{0.48\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../results/02_benchmarks/sleep_health/confusion_matrix_tabpfn.png}
+    \caption{TabPFN}
+  \end{subfigure}
+
+  \vspace{0.4cm}
+
+  \begin{subfigure}{0.48\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../results/02_benchmarks/sleep_health/confusion_matrix_xgboost.png}
+    \caption{XGBoost}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}{0.48\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../results/02_benchmarks/sleep_health/confusion_matrix_xrfm.png}
+    \caption{xRFM}
+  \end{subfigure}
+
+  \caption{Confusion matrices on the Sleep Health dataset.}
+  \label{fig:cm-sleep-health}
+\end{figure}

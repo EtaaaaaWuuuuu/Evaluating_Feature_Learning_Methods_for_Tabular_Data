@@ -1,0 +1,28 @@
+[project]
+name = "benchmark"
+version = "0.1.0"
+description = "One Night Miracle team's repository"
+readme = "README.md"
+requires-python = "==3.13.*"
+dependencies = [
+    "matplotlib==3.10.*",
+    "networkx==3.6.*",
+    "numpy==2.4.*",
+    "optuna==4.8.*",
+    "optuna-integration==4.8.*",
+    "pandas==3.0.*",
+    "pre-commit==4.5.*",
+    "pydantic==2.12.*",
+    "ruff==0.15.*",
+    "scikit-learn==1.8.*",
+    "seaborn==0.13.*",
+    "sympy==1.14.*",
+    "tabpfn==7.1.*",
+    "torch==2.11.*",
+    "tqdm==4.67.*",
+    "xgboost==3.2.*",
+    "xrfm==0.4.*",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]

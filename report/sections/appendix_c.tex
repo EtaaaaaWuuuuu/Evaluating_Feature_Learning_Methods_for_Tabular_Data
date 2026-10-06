@@ -1,0 +1,74 @@
+\clearpage
+\section{AUC-ROC curves for classification datasets}
+
+Figures~\ref{fig:roc-obesity} and~\ref{fig:roc-sleep} show the AUC-ROC curves for the two classification datasets. These curves illustrate the trade-off between true positive rate and false positive rate across different thresholds, complementing the AUC-ROC scores reported in the Results section.
+
+\subsection{Obesity Level}
+
+\begin{figure}[H]
+  \centering
+
+  \begin{subfigure}{0.48\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../results/02_benchmarks/obesity_level/roc_curve_random_forest.png}
+    \caption{Random Forest}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}{0.48\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../results/02_benchmarks/obesity_level/roc_curve_tabpfn.png}
+    \caption{TabPFN}
+  \end{subfigure}
+
+  \vspace{0.4cm}
+
+  \begin{subfigure}{0.48\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../results/02_benchmarks/obesity_level/roc_curve_xgboost.png}
+    \caption{XGBoost}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}{0.48\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../results/02_benchmarks/obesity_level/roc_curve_xrfm.png}
+    \caption{xRFM}
+  \end{subfigure}
+
+  \caption{AUC-ROC curves on the Obesity Level dataset.}
+  \label{fig:roc-obesity}
+\end{figure}
+
+\subsection{Sleep Health}
+
+\begin{figure}[H]
+  \centering
+
+  \begin{subfigure}{0.48\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../results/02_benchmarks/sleep_health/roc_curve_random_forest.png}
+    \caption{Random Forest}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}{0.48\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../results/02_benchmarks/sleep_health/roc_curve_tabpfn.png}
+    \caption{TabPFN}
+  \end{subfigure}
+
+  \vspace{0.4cm}
+
+  \begin{subfigure}{0.48\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../results/02_benchmarks/sleep_health/roc_curve_xgboost.png}
+    \caption{XGBoost}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}{0.48\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../results/02_benchmarks/sleep_health/roc_curve_xrfm.png}
+    \caption{xRFM}
+  \end{subfigure}
+
+  \caption{AUC-ROC curves on the Sleep Health dataset.}
+  \label{fig:roc-sleep}
+\end{figure}
