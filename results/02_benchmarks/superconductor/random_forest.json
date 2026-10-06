@@ -1,0 +1,13 @@
+{
+    "rmse": 10.7205,
+    "fit_time_s": 0.21840597400023398,
+    "infer_time_per_sample_s": 6.4467756878662905e-06,
+    "best_params": {
+        "n_estimators": 62,
+        "max_depth": 12,
+        "min_samples_split": 5,
+        "min_samples_leaf": 2,
+        "max_features": "sqrt",
+        "bootstrap": true
+    }
+}

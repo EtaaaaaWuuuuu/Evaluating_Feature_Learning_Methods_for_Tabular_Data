@@ -1,0 +1,14 @@
+{
+    "accuracy": 0.9433,
+    "auc_roc": 0.9926,
+    "fit_time_s": 0.10949797499961278,
+    "infer_time_per_sample_s": 6.010084160767404e-05,
+    "best_params": {
+        "n_estimators": 120,
+        "max_depth": 12,
+        "min_samples_split": 6,
+        "min_samples_leaf": 2,
+        "max_features": "log2",
+        "bootstrap": true
+    }
+}

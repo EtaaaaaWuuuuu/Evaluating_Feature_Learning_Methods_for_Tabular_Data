@@ -1,0 +1,32 @@
+{
+    "accuracy": 0.966903073286052,
+    "auc_roc": 0.9990346395487394,
+    "fit_time_s": 0.6879551490055746,
+    "infer_time_per_sample_s": 6.673717492889728e-05,
+    "best_params": {
+        "n_estimators": 265,
+        "learning_rate": 0.1561985292624422,
+        "max_depth": 7,
+        "min_child_weight": 1,
+        "subsample": 0.8715208985892365,
+        "colsample_bytree": 0.9030187553597947,
+        "gamma": 2.1073424781242878e-08,
+        "reg_alpha": 0.001332030529288859,
+        "reg_lambda": 0.1006191384018849
+    },
+    "add_test_metric": {
+        "f1": 0.9661313471105407,
+        "precision": 0.9665026982467569,
+        "recall": 0.9658391325879011
+    },
+    "add_train_metric": {
+        "accuracy": 1.0,
+        "auc_roc": 1.0,
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "infer_time_per_sample_s": 1.3638370262200434e-05,
+        "search_time_s": 42.63172700299765,
+        "best_cv_f1": 0.9687992781301554
+    }
+}

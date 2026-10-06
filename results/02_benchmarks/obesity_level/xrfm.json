@@ -1,0 +1,32 @@
+{
+    "accuracy": 0.9835,
+    "auc_roc": 0.9997,
+    "train_metrics": {
+        "accuracy": 1.0,
+        "auc_roc": 1.0
+    },
+    "val_metrics": {
+        "accuracy": 0.9882,
+        "auc_roc": 0.9997
+    },
+    "fit_time_s": 0.15676292000000558,
+    "infer_time_per_sample_s": 7.321801418472805e-06,
+    "best_params": {
+        "tuning_metric": "f1",
+        "split_method": "top_vector_agop_on_subset",
+        "max_leaf_size": 30946,
+        "model": {
+            "bandwidth": 1.8169724544596653,
+            "exponent": 0.8266944178149827,
+            "diag": true,
+            "bandwidth_mode": "constant",
+            "kernel": "lpq",
+            "norm_p": 0.8739867756221869
+        },
+        "fit": {
+            "reg": 5.7741155858099045e-05,
+            "verbose": false,
+            "early_stop_rfm": true
+        }
+    }
+}

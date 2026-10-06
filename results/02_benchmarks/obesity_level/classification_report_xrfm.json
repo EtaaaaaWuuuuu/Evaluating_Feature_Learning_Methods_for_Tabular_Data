@@ -1,0 +1,57 @@
+{
+    "Insufficient_Weight": {
+        "precision": 0.9815,
+        "recall": 0.9815,
+        "f1-score": 0.9815,
+        "support": 54.0
+    },
+    "Normal_Weight": {
+        "precision": 0.9636,
+        "recall": 0.9138,
+        "f1-score": 0.9381,
+        "support": 58.0
+    },
+    "Obesity_Type_I": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 70.0
+    },
+    "Obesity_Type_II": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 60.0
+    },
+    "Obesity_Type_III": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 65.0
+    },
+    "Overweight_Level_I": {
+        "precision": 0.9344,
+        "recall": 0.9828,
+        "f1-score": 0.958,
+        "support": 58.0
+    },
+    "Overweight_Level_II": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 58.0
+    },
+    "accuracy": 0.9835,
+    "macro avg": {
+        "precision": 0.9828,
+        "recall": 0.9826,
+        "f1-score": 0.9825,
+        "support": 423.0
+    },
+    "weighted avg": {
+        "precision": 0.9837,
+        "recall": 0.9835,
+        "f1-score": 0.9834,
+        "support": 423.0
+    }
+}

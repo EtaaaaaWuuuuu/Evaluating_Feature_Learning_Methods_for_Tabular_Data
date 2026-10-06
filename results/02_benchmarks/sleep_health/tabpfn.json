@@ -1,0 +1,18 @@
+{
+    "fit_time_s": 1.7053267139999662,
+    "infer_time_per_sample_s": 0.010562354663000406,
+    "tabpfn_params": {
+        "device": "auto",
+        "ignore_pretraining_limits": false,
+        "random_state": 9417,
+        "n_estimators": 8
+    },
+    "downsample": false,
+    "max_train_rows": 1000,
+    "max_test_rows": 300,
+    "effective_max_train_rows": 1000,
+    "train_rows_used": 16000,
+    "test_rows_used": 4000,
+    "accuracy": 0.9435,
+    "auc_roc": 0.9933
+}

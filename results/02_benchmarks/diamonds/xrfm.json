@@ -1,0 +1,29 @@
+{
+    "rmse": 520.0493,
+    "train_metrics": {
+        "rmse": 415.1151
+    },
+    "val_metrics": {
+        "rmse": 513.5258
+    },
+    "fit_time_s": 80.38236566399792,
+    "infer_time_per_sample_s": 0.00011025719670028217,
+    "best_params": {
+        "tuning_metric": "mse",
+        "split_method": "top_vector_agop_on_subset",
+        "max_leaf_size": 30680,
+        "model": {
+            "bandwidth": 3.392738013710273,
+            "exponent": 1.3488314714785494,
+            "diag": false,
+            "bandwidth_mode": "constant",
+            "kernel": "lpq",
+            "norm_p": 1.744017313867038
+        },
+        "fit": {
+            "reg": 0.0137131961354413,
+            "verbose": false,
+            "early_stop_rfm": true
+        }
+    }
+}

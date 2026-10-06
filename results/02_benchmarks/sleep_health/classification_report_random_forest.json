@@ -1,0 +1,39 @@
+{
+    "Healthy": {
+        "precision": 0.933,
+        "recall": 0.9413,
+        "f1-score": 0.9371,
+        "support": 2129.0
+    },
+    "Mild": {
+        "precision": 0.7641,
+        "recall": 0.8863,
+        "f1-score": 0.8207,
+        "support": 1363.0
+    },
+    "Moderate": {
+        "precision": 0.5605,
+        "recall": 0.2558,
+        "f1-score": 0.3513,
+        "support": 344.0
+    },
+    "Severe": {
+        "precision": 0.7281,
+        "recall": 0.5061,
+        "f1-score": 0.5971,
+        "support": 164.0
+    },
+    "accuracy": 0.8458,
+    "macro avg": {
+        "precision": 0.7464,
+        "recall": 0.6474,
+        "f1-score": 0.6765,
+        "support": 4000.0
+    },
+    "weighted avg": {
+        "precision": 0.835,
+        "recall": 0.8458,
+        "f1-score": 0.8331,
+        "support": 4000.0
+    }
+}

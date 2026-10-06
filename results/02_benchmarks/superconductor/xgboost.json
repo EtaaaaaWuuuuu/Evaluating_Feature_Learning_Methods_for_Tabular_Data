@@ -1,0 +1,22 @@
+{
+    "rmse": 9.400092558709446,
+    "fit_time_s": 2.0741579240020656,
+    "infer_time_per_sample_s": 2.6309635549536367e-06,
+    "best_params": {
+        "n_estimators": 523,
+        "learning_rate": 0.042310684363918175,
+        "max_depth": 8,
+        "min_child_weight": 6,
+        "subsample": 0.8270111172384977,
+        "colsample_bytree": 0.6628398071538469,
+        "gamma": 0.11973773830406163,
+        "reg_alpha": 0.01329723691639516,
+        "reg_lambda": 0.16728738038802565
+    },
+    "add_train_metric": {
+        "rmse": 5.113183891237947,
+        "infer_time_per_sample_s": 1.0414206936023583e-06,
+        "search_time_s": 503.68733500000235,
+        "best_cv_mse": 90.18218841552735
+    }
+}

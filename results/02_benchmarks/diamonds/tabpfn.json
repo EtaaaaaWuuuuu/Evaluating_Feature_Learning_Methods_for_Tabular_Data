@@ -1,0 +1,17 @@
+{
+    "fit_time_s": 3.677332715000375,
+    "infer_time_per_sample_s": 0.06968322708166473,
+    "tabpfn_params": {
+        "device": "auto",
+        "ignore_pretraining_limits": false,
+        "random_state": 9417,
+        "n_estimators": 8
+    },
+    "downsample": false,
+    "max_train_rows": 1000,
+    "max_test_rows": 300,
+    "effective_max_train_rows": 1000,
+    "train_rows_used": 43152,
+    "test_rows_used": 10788,
+    "rmse": 519.3203
+}
